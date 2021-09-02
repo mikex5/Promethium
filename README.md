@@ -21,3 +21,7 @@ Initial release
  - Made blue lane models slightly brighter  
  - Tap notes are more distinct, more transparent and darker than normal notes  
  - Added flashiness to tap explosions
+
+#### 9/1/21
+
+ - Added branch for highwayless option for future builds... which include their own backplate

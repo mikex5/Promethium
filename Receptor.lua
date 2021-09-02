@@ -17,7 +17,7 @@ local feverActive = false
 if sButton == "Strum Up" then
     return Def.ActorFrame{
         Def.ActorFrame{ --Fever meter
-            OnCommand=function(self) self:z(-5) end,
+            OnCommand=function(self) self:z(-5):x(10) end,
             Def.Quad{
                 OnCommand=function(self)
                     self:zoomto(32,100):diffuse(0,0,0,1):xy(184,-48)
@@ -75,7 +75,7 @@ if sButton == "Strum Up" then
             end
         },
         Def.ActorFrame{ --Score and multiplier
-            OnCommand=function(self) self:z(-5) end,
+            OnCommand=function(self) self:z(-5):x(-8) end,
             Def.Quad{
                 OnCommand=function(self) 
                     self:zoomto(80,100):diffuse(0,0,0,1):xy(-210,-48)
@@ -177,19 +177,9 @@ if sButton == "Strum Up" then
         },
         Def.ActorFrame{ --Highway
             OnCommand=function(self) self:z(-8) end,
-            Def.Quad{
-                OnCommand=function(self) 
-                    self:zoomto(330,1100):diffuse(0,0,0,.65):diffusetopedge(0,0,0,0):xy(0,-530)
-                end
-            },
-            Def.Quad{
-                OnCommand=function(self) 
-                    self:zoomto(330,64):diffuse(0,0,0,1):xy(0,-12)
-                end
-            },
             Def.Quad{ --Highway edges
                 InitCommand=function(self)
-                    self:xy(-166,-237):zoomto(2,512):diffuse(1,1,1,1):diffusetopedge(1,1,1,0)
+                    self:xy(-165,-205):zoomto(2,612):diffuse(1,1,1,1):diffusetopedge(1,1,1,0)
                 end,
                 FeverMessageCommand=function(self,params)
                     if params.pn ~= sPlayer then return end
@@ -202,7 +192,7 @@ if sButton == "Strum Up" then
             },
             Def.Quad{
                 InitCommand=function(self)
-                    self:xy(166,-237):zoomto(2,512):diffuse(1,1,1,1):diffusetopedge(1,1,1,0)
+                    self:xy(165,-205):zoomto(2,612):diffuse(1,1,1,1):diffusetopedge(1,1,1,0)
                 end,
                 FeverMessageCommand=function(self,params)
                     if params.pn ~= sPlayer then return end
@@ -232,7 +222,7 @@ if sButton == "Strum Up" then
                 FeverMessageCommand=function(self,params)
                     if params.pn ~= sPlayer then return end
                     if params.Active then
-                        self:y(-110):diffusealpha(1):linear(0.5):y(-800):diffusealpha(0)
+                        self:y(-70):diffusealpha(1):linear(0.5):y(-800):diffusealpha(0)
                     else
                         self:diffusealpha(0):y(-64)
                     end
@@ -240,16 +230,16 @@ if sButton == "Strum Up" then
             },
             Def.ActorFrame{ --More fever effects
                 InitCommand=function(self)
-                    self:y(-400):diffusealpha(0)
+                    self:y(-369):diffusealpha(0)
                 end,
                 Def.Quad{
                     InitCommand=function(self)
-                        self:x(-150):zoomto(32,840):diffuse(.4,1,1,0):diffuselowerleft(.4,1,1,1)
+                        self:x(-150):zoomto(32,940):diffuse(.4,1,1,0):diffuselowerleft(.4,1,1,1)
                     end
                 },
                 Def.Quad{
                     InitCommand=function(self)
-                        self:x(150):zoomto(-32,840):diffuse(.4,1,1,0):diffuselowerleft(.4,1,1,1)
+                        self:x(150):zoomto(-32,940):diffuse(.4,1,1,0):diffuselowerleft(.4,1,1,1)
                     end
                 },
                 FeverMessageCommand=function(self,params)
